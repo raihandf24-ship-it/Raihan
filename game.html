@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container-game">
+    <h2>GAME KEMATIAN 👾</h2>
+    <p>Clue: Bumi itu bulat 𝆺𝅥⃝🌍</p>
+    <p><b>80 + 80 =</b></p>
+    <input type="text" id="answer" placeholder="Jawaban kamu...">
+    <br>
+    <button onclick="checkAnswer()">Submit</button>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById("answer").value.trim().toLowerCase();
+      if (answer === "6") {
+        confetti();
+        setTimeout(() => {
+          window.location.href = "final.html";
+        }, 1500);
+      } else {
+        alert("Jawaban salah 😜, coba lagi!");
+      }
+    }
+  </script>
+</body>
+</html>
